@@ -1,4 +1,4 @@
-import React, { Component, LinkButton } from "react";
+import React, { Component } from "react";
 import "./EntradaAnimada.scss";
 import { Link } from "react-router-dom";
 
