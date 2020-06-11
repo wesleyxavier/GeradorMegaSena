@@ -1,0 +1,53 @@
+.entrada-animada {
+    width: 100vw;
+    height: 100vh;
+    background: #fdcb6e;
+    display: flex;
+    position: relative;
+    animation: mymove 3s;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .logo {
+        border: none;
+       background-color: transparent;
+        border-radius: 100%;
+        width: 300px;
+        height: 300px;
+
+        .hello {
+            visibility: hidden;
+            stroke-width: 3px;
+            stroke-dasharray: 1045; // numero arrendoda do tamanho
+            animation: 3s write;
+            animation-delay: 2500ms; // quanto menor, mais rápido
+
+            path {
+                stroke: #fff !important;
+            }
+        }
+
+        @keyframes write {
+            0% {
+                stroke-dashoffset: 1045; // tamanho inicial
+                visibility: hidden;
+            }
+
+            100% {
+                stroke-dashoffset: 0; // tamanho final
+                visibility: visible;
+            }
+        }
+    }
+}
+
+@keyframes mymove {
+    from {
+        top: -100vh;
+    }
+
+    to {
+        top: 0px;
+    }
+}
