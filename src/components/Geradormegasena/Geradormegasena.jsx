@@ -7,12 +7,8 @@ export default class GeradorMegaSena extends Component {
     render() {
         return (
             <section className="gerador-mega-sena">
-                <GeradorMegaSenaHeader>
-
-                </GeradorMegaSenaHeader>
-                <GeradorMegaSenaMain>
-
-                </GeradorMegaSenaMain>
+                <GeradorMegaSenaHeader />
+                <GeradorMegaSenaMain />
             </section>
         )
     }
