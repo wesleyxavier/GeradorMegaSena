@@ -20,9 +20,9 @@ const MyButton = styled.button`
   border: none;
   background: #74b9ff;
   color: white;
-width: 50vw;
-height:38px;
-border-radius:10px;
+  width: 50vw;
+  height: 38px;
+  border-radius: 10px;
 `;
 
 export default class GeradorMegaSenaMain extends Component {
@@ -57,7 +57,6 @@ export default class GeradorMegaSenaMain extends Component {
     return (
       <main>
         <MyDiv>
-       
           {this.state.lista.map((l, index, x) => {
             return (
               <Numero
@@ -66,8 +65,15 @@ export default class GeradorMegaSenaMain extends Component {
                   Index: index,
                   Lista: x,
                   Funcao: (resultado = []) => {
+                    let res = resultado.sort().map((c) => {
+                      if (Number(c) > 60) {
+                        c = 60;
+                      }
+                      return c;
+                    });
+                    
                     this.setState({
-                      lista: resultado.sort(),
+                      lista: res,
                     });
                   },
                 }}
