@@ -34,6 +34,7 @@ export default class GeradorMegaSenaMain extends Component {
   }
 
   newFunction = () => {
+    
     let contagem = 0;
     this.setState({
       lista: [0, 1, 2, 3, 4, 5],
@@ -71,7 +72,7 @@ export default class GeradorMegaSenaMain extends Component {
                       }
                       return c;
                     });
-                    
+
                     this.setState({
                       lista: res,
                     });
