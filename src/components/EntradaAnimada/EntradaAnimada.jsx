@@ -9,18 +9,17 @@ export default class EntradaAnimada extends Component {
 
   render() {
     setTimeout(() => {
-      let hello = document.querySelector(".hello");
-      hello.style.visibility = "visible";
-      let button = document.querySelector("button.logo");
-      button.style.boxShadow = "0rem 1rem 1rem rgba(155, 155, 155, .2)";
+      try {
+        let hello = document.querySelector(".hello");
+        hello.style.visibility = "visible";
+        let button = document.querySelector("button.logo");
+        button.style.boxShadow = "0rem 1rem 1rem rgba(155, 155, 155, .2)";
+      } catch (error) {}
     }, 5000);
     return (
       <div className="entrada-animada">
         <Link to="/Mega" className="logo">
-          <button
-            type="button"
-            className="logo"
-          >
+          <button type="button" className="logo">
             <svg
               className="hello"
               width="230.3px"

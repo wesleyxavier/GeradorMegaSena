@@ -29,14 +29,15 @@ export default class GeradorMegaSenaMain extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      usados: [],
       lista: [0, 1, 2, 3, 4, 5],
     };
   }
 
   newFunction = () => {
-    
     let contagem = 0;
     this.setState({
+      usados: this.ValidarJaUsados(),
       lista: [0, 1, 2, 3, 4, 5],
     });
     const interval = setInterval(() => {
@@ -54,6 +55,13 @@ export default class GeradorMegaSenaMain extends Component {
     }, 100);
   };
 
+  ValidarJaUsados() {
+    if (this.state.usados.length >= 42) {
+      return [];
+    }
+    return this.state.usados;
+  }
+
   render() {
     return (
       <main>
@@ -65,16 +73,10 @@ export default class GeradorMegaSenaMain extends Component {
                   Numero: l,
                   Index: index,
                   Lista: x,
+                  Usados: this.state.usados,
                   Funcao: (resultado = []) => {
-                    let res = resultado.sort().map((c) => {
-                      if (Number(c) > 60) {
-                        c = 60;
-                      }
-                      return c;
-                    });
-
                     this.setState({
-                      lista: res,
+                      lista: resultado.sort(),
                     });
                   },
                 }}

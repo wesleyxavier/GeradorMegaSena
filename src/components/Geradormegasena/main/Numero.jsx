@@ -8,14 +8,13 @@ const NovoSpanNumero = styled.span`
 
 export default function Numero(props) {
   let [flip, setFlip] = useState(false);
-  let segundo;
   let contagem = 0;
+  const segundo = 1000;
   const tempoEsperaSegundo = 5;
   const velocidade = 10;
 
   let IntervalFlipNumeroAleatorio = () => {
     contagem = 0;
-    segundo = (Math.random() * 1000);
     const interval = setInterval(() => {
       numerosAleatorio();
 
