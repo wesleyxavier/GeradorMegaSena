@@ -8,41 +8,41 @@ const NovoSpanNumero = styled.span`
 
 export default function Numero(props) {
   let [flip, setFlip] = useState(false);
-
+  let contagem = 0;
   const tempoEsperaSegundo = 5;
-  const segundo = 1000;
+  const segundo = (Math.random() * 1000);
   const velocidade = 10;
 
-  this.IntervalFlipNumeroAleatorio = () => {
-    this.contagem = 0;
+  let IntervalFlipNumeroAleatorio = () => {
+    contagem = 0;
     const interval = setInterval(() => {
-      this.numerosAleatorio();
+      numerosAleatorio();
 
-      if (this.ValidarParaInterval(interval)) return;
+      if (ValidarParaInterval(interval)) return;
 
-      this.funcSetFlip();
+      funcSetFlip();
     }, segundo / velocidade);
   };
 
-  this.ValidarParaInterval = (interval) => {
-    if (this.contagem >= tempoEsperaSegundo * velocidade) {
+  let ValidarParaInterval = (interval) => {
+    if (contagem >= tempoEsperaSegundo * velocidade) {
       clearInterval(interval);
       props.numero.Funcao(props.numero.Lista);
       return true;
     }
 
-    this.contagem++;
+    contagem++;
 
     return false;
   };
 
-  this.funcSetFlip = () => {
+  let funcSetFlip = () => {
     flip = !flip;
     setFlip(flip);
   };
 
-  this.numerosAleatorio = () => {
-    let aleatorio = Math.floor(Math.random() * (60 + (props.numero.Index + 1)));
+  let numerosAleatorio = () => {
+    let aleatorio = Math.floor(Math.random() * (59 + (props.numero.Index + 1)));
 
     if (aleatorio % 7) aleatorio += 7;
     if (aleatorio > 60)  aleatorio = 60;
@@ -55,7 +55,7 @@ export default function Numero(props) {
     <div className="scene">
       <div
         id={`scene_${props.numero.Numero + 1}`}
-        onClick={(_) => this.IntervalFlipNumeroAleatorio()}
+        onClick={(_) => IntervalFlipNumeroAleatorio()}
         style={{ transition: `transform ${segundo / velocidade}ms` }}
         className={`card ${flip ? "is-flipped" : ""}`}
       >

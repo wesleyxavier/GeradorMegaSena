@@ -11,7 +11,9 @@ export default class EntradaAnimada extends Component {
     setTimeout(() => {
       let hello = document.querySelector(".hello");
       hello.style.visibility = "visible";
-    }, 3000);
+      let button = document.querySelector("button.logo");
+      button.style.boxShadow = "0rem 1rem 1rem rgba(155, 155, 155, .2)";
+    }, 5000);
     return (
       <div className="entrada-animada">
         <Link to="/Mega" className="logo">
