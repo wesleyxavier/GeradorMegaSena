@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { HashRouter as Router, Route, Switch } from "react-router-dom";
 import "./App.scss";
 import EntradaAnimada from "./components/EntradaAnimada/EntradaAnimada";
 import GeradorMegaSena from "./components/Geradormegasena/Geradormegasena";
